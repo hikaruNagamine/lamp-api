@@ -23,7 +23,7 @@
 
 ## 使い方
 
-- [セットアップ方法はこちら](リンクURL)
+- [セットアップ方法はこちら](doc/setup.md)
 - WebAPIでの利用方法
-  - [使用例](リンクURL)
-  - [API IF 一覧](リンクURL)
+  - [使用例](doc/example.md)
+  - [API IF 一覧](doc/setup.md)
