@@ -4,7 +4,7 @@ import { ResetSwitchControl } from './ResetSwitchControl'
 import { SettingFile } from './SettingFile'
 
 //インターフェース
-export interface IApiSsPatrolLamp {
+export interface IApiLamp {
     color_type: number,  // 0:none, 1:green, 2:yellow, 3:red
     flg_buzzer: boolean,  // 0:none, 1:buzzer on
     blinking_pattern: number,  // 0: 常時点灯
@@ -13,8 +13,8 @@ export interface IApiSsPatrolLamp {
 }
 
 //クラス
-export class ApiSsPatrolLampService {
-    public async get(): Promise<IApiSsPatrolLamp> {
+export class ApiLampService {
+    public async get(): Promise<IApiLamp> {
         const file = new SettingFile();
         const settings = file.read();
         // TODO : 現状では、前回の設定状況しか分からないため、現時点での点灯状況なども取得して状態を返すパターンも必要あり。
@@ -22,7 +22,7 @@ export class ApiSsPatrolLampService {
         console.log(settings)
         return settings
     }
-    public async setting(params: IApiSsPatrolLamp): Promise<IApiSsPatrolLamp> {
+    public async setting(params: IApiLamp): Promise<IApiLamp> {
         console.log("settings!!")
         console.log(params)
         const lamp = new LampLightControl()

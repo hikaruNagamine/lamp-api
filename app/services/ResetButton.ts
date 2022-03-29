@@ -1,12 +1,12 @@
 import gpio, { reset } from 'rpi-gpio';
 import axios from 'axios';
-import {IApiSsPatrolLamp} from './ApiSsPatrolLampService';
+import {IApiLamp} from './ApiLampService';
 
     const BUTTON_PIN: number = 35// pin number 35, gpio 19
 
 let reset_flg: boolean = false;
 const RESET_URL: string = 'http://localhost:3000/lamp-api';
-const RESET_PARAMETER: IApiSsPatrolLamp = {
+const RESET_PARAMETER: IApiLamp = {
         "color_type":0,
         "flg_buzzer": false,
         "blinking_pattern":1,

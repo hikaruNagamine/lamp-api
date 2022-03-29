@@ -2,7 +2,7 @@ import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import { TestService } from '../services/TestService';
-import { ApiSsPatrolLampService } from '../services/ApiSsPatrolLampService';
+import { ApiLampService } from '../services/ApiLampService';
 import { config } from 'process';
 const app = express();
 app.use(helmet());
@@ -10,7 +10,7 @@ app.use(cors());
 // ルーティングする
 const router = express.Router();
 
-const clone_service = new ApiSsPatrolLampService();
+const clone_service = new ApiLampService();
 clone_service.clone().catch(e => {console.log("ERROR!", e)});
 
 // routerにルーティングの動作を記述する
@@ -28,7 +28,7 @@ router.get('/test', (req, res, next) => {
 
 router.get('/lamp-api', (req, res, next) => {
     // const { user } = req.params;
-    const service = new ApiSsPatrolLampService();
+    const service = new ApiLampService();
     service
         .get()
         .then(result => res.status(200).send(result))
@@ -37,7 +37,7 @@ router.get('/lamp-api', (req, res, next) => {
 
 router.post('/lamp-api', (req, res, next) => {
     const params = req.body;
-    const service = new ApiSsPatrolLampService();
+    const service = new ApiLampService();
     service
         .setting(params)
         .then(result => res.status(200).send(result))
