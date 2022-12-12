@@ -6,7 +6,11 @@
 
 ## 制作物
 
-<img src="./img/IMG_1357.jpg" width="50%">
+<img src="./img/IMG_1357.jpg" width="60%">
+
+
+https://user-images.githubusercontent.com/59303144/206948672-38b74358-fd85-491c-a279-6c52b6ab7c04.mp4
+
 
 ## ハードウェア
 
