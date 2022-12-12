@@ -6,7 +6,7 @@
 
 ## 制作物
 
-![lamp](./img/IMG_1357.jpg)
+<img src="./img/IMG_1357.jpg" width="50%">
 
 ## ハードウェア
 
